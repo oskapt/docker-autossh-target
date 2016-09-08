@@ -24,4 +24,3 @@ RUN chown -R autossh:autossh /home/autossh
 # Rock the startup
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/start.sh"]
-
