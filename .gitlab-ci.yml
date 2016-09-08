@@ -1,0 +1,11 @@
+image: docker:latest
+
+before_script:
+  - docker info
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.monach.us
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t registry.monach.us/docker/autossh .
+    - docker push registry.monach.us/docker/autossh
