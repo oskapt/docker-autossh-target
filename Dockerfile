@@ -17,9 +17,9 @@ RUN wget -O /usr/bin/dumb-init https://github.com/Yelp/dumb-init/releases/downlo
     && chmod +x /usr/bin/dumb-init
 
 # Copy in our startup and key files
-ADD start.sh /start.sh
-ADD authorized_keys /home/autossh/.ssh/authorized_keys
-ADD config /home/autossh/.ssh/config
+ADD files/start.sh /start.sh
+ADD files/authorized_keys /home/autossh/.ssh/authorized_keys
+ADD files/config /home/autossh/.ssh/config
 RUN chmod 600 /home/autossh/.ssh/*
 
 # Set ownership correctly
