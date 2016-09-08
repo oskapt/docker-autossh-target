@@ -1,0 +1,12 @@
+---
+# autossh-target compose instructions
+
+autossh:
+  image: monachus/autossh-target
+  ports:
+    - "2209:22"
+    - "127.0.0.1:22229:2222"
+  volumes:
+    - /opt/docker/autossh-target/ssh_home:/home/autossh/.ssh
+  container_name: autossh-target
+

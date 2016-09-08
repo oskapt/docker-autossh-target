@@ -5,5 +5,12 @@ before_script:
 build:
   stage: build
   script:
-    - docker build --pull -t registry.monach.us/docker/autossh .
-    - docker push registry.monach.us/docker/autossh
+    - docker build --pull -t registry.monach.us/docker/autossh-target .
+    - docker push registry.monach.us/docker/autossh-target
+
+# release:
+#   stage: release
+#   script:
+#     - docker login -u $HUB_USERNAME -p $HUB_PASSWORD
+#     - docker tag registry.monach.us/docker/autossh:latest monachus/autossh:latest
+#     - docker push monachus/autossh
