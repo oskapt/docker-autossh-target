@@ -12,5 +12,5 @@ push_to_docker_hub:
   stage: deploy
   script:
     - docker login -u $HUB_USERNAME -p $HUB_PASSWORD
-    - docker tag registry.monach.us/docker/autossh:latest monachus/autossh:latest
-    - docker push monachus/autossh
+    - docker tag registry.monach.us/docker/autossh:latest monachus/autossh-target:latest
+    - docker push monachus/autossh-target
